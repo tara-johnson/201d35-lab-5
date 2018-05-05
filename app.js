@@ -9,9 +9,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-    var result = a + b;
-    var message = 'The sum of ' + a + ' and ' + b + ' is ' + result + '.';
-    return [result, message];
+    var resultSum = a + b;
+    var messageSum = 'The sum of ' + a + ' and ' + b + ' is ' + resultSum + '.';
+    return [resultSum, messageSum];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -29,13 +29,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-    var result = a * b;
-    var message = 'The product of ' + a + ' and ' + b + ' is ' + result + '.';
-    return [result, message];
+    var resultMultiply = a * b;
+    var messageMultiply = 'The product of ' + a + ' and ' + b + ' is ' + resultMultiply + '.';
+    return [resultMultiply, messageMultiply];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -51,12 +51,19 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
+function sumAndMultiply(a, b, c) {
+    var firstSum = sum(a, b);
+    var secondSum = sum(firstSum[0], c);
+    var messageSum = + a + ' and ' + b + ' and ' + c + ' sum to ' + secondSum[0] + '.';
 
+    var firstProduct = multiply(a, b);
+    var secondProduct = multiply(firstProduct[0], c);
+    var messageProduct = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + secondProduct[0] + '.';
+    return [secondSum[0], secondProduct[0], messageSum, messageProduct];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 

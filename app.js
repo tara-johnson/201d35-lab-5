@@ -81,15 +81,9 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4];
 
 function sumArray(testArray) {
-  
-  var sumOne = sum(testArray[0],testArray[1]);
-//   console.log(sumOne);
-
-  var sumTwo = sum(sumOne[0], testArray[2]);
-//   console.log(sumTwo);
-
-  return [sumTwo[0], testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumTwo[0] + ' is their sum.'];
-
+    var sumOne = sum(testArray[0], testArray[1]);
+    var sumTwo = sum(sumOne[0], testArray[2]);
+    return [sumTwo[0], testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumTwo[0] + ' is their sum.'];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -109,12 +103,14 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
-
+function multiplyArray(testArray) {
+    var multOne = multiply(testArray[0], testArray[1]);
+    var multTwo = multiply(multOne[0], testArray[2]);
+    return [multTwo[0], 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + multTwo[0] + '.'];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
